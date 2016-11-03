@@ -10,11 +10,12 @@
 #include <OneWire.h>
 #include <openag_module.h>
 #include <std_msgs/Float32.h>
+#define ph_pin 1
 
 class Dfr0161: public Module {
   public:
   // Private Functions
-  Dfr0161(int pin);
+  Dfr0161(int _ph_pin);
   void begin();
   void update();
   bool get_water_potential_hydrogen(std_msgs::Float32 &msg);
@@ -31,7 +32,7 @@ class Dfr0161: public Module {
   bool readSensor();
   
   // Private Variables
-  int _ph_pin;
+  int _ph_pin = 1;
   float _water_potential_hydrogen;
   bool _send_water_potential_hydrogen;
   uint32_t _time_of_last_reading;
