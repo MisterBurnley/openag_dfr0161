@@ -8,6 +8,7 @@
 }
 
  void Dfr0161::begin(){
+   Serial2.println("Hi");
    pinMode(_ph_pin, OUTPUT);
    digitalWrite(_ph_pin, LOW);
    _time_of_last_reading = 0;
@@ -19,6 +20,7 @@
    if (millis() - _time_of_last_reading > _min_update_interval){
      getData();
      _time_of_last_reading = millis();
+    Serial2.println("HiUpdate");
    }
 }
  
@@ -26,10 +28,12 @@
    msg.data = _water_potential_hydrogen;
    bool res = _send_water_potential_hydrogen;
    _send_water_potential_hydrogen = false;
+   Serial2.println("HiBool");
    return res;
 }
  
  float Dfr0161::averageArray(int* arr, int number){
+   Serial2.println("HiAverage");
    int i;
    int max,min;
    float avg;
@@ -83,6 +87,7 @@
 //.......................................Private.......................................//
  
  float Dfr0161::getData(void){
+   Serial2.println("HiData");
    int samples = 40;
   int voltage[samples];
   const int sample_time_delta = 20; // millisecond
