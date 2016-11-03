@@ -1,7 +1,7 @@
 
 #include "openag_dfr0161.h"
 
- Dfr0161::Dfr0161(_ph_pin){
+ Dfr0161::Dfr0161(int _ph_pin){
    status_level = OK;
    status_msg = "";
 }
