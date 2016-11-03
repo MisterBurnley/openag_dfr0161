@@ -25,7 +25,7 @@ class Dfr0161: public Module{
   // Private Variables
   int _pin;
   float _water_potential_hydrogen;
-  bool send_water_potential_hydrogen);
+  bool _send_water_potential_hydrogen;
   unite32_t _time_of_last_reading;
   const unit32_t _min_update_interval = 1800;
   
