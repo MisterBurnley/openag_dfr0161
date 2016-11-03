@@ -5,12 +5,14 @@
    _pin = pin;
    status_level = OK;
    status_msg = "";
- }
+}
 
  void Dfr0161::begin(){
-   pinMode(_pin, INPUT);
-   analogWrite(HIGH);
-   _time_of_last_reading = 0; 
+   pinMode(_ph_pin, OUTPUT);
+   digitalWrite(_ph_pin, LOW);
+   _time_of_last_reading = 0;
+   ph_calibration_coefficient_ = 3.5:
+   ph_calibration_offset_ = -0.1;
  }
  
  void Dfr0161::update(){
@@ -18,13 +20,29 @@
      getData();
      _time_of_last_reading = millis();
    }
- }
+}
  
  bool Dfr0161::get_water_potential_hygrogen(std_msg::Float32 &msg){
    msg.data = _water_potential_hydrogen;
    bool res = _send_water_potential_hydrogen;
    _send_water_potential_hydrogen = false;
    return res;
- }
+}
+
+//.......................................Private.......................................//
  
- 
+ void Dfr0161::getData(void){
+   int samples = 40;
+  int voltage[samples];
+  const int sample_time_delta = 20; // millisecond
+  // Acquire Samples
+  for (int i=0; i<samples; i++){
+   voltage[i] = analogRad(_ph_pin);
+  }
+  
+  // Remove Min & Max Samples, average, Convert to Voltage
+  double volts = averageArray(voltage, samples) * 5.0/1024;
+  
+  // Conver Average Voltage to pH
+  return _ph_calibration_coefficient*volts + _ph_calibration_offset;
+}
