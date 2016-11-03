@@ -17,7 +17,7 @@ class Dfr0161: public Module {
   Dfr0161(int pin);
   void begin();
   void update();
-  bool get_water_ph(std_msgs::Float32 &msg);
+  bool get_water_potential_hydrogen(std_msgs::Float32 &msg);
   
   // From dfr0161_0300_sensor
   float averageArray(int* arr, int number);
@@ -32,8 +32,8 @@ class Dfr0161: public Module {
   
   // Private Variables
   int _ph_pin;
-  float _water_ph;
-  bool _water_ph;
+  float _water_potential_hydrogen;
+  bool _send_water_potential_hydrogen;
   uint32_t _time_of_last_reading;
   const uint32_t _min_update_interval = 1800;
   
