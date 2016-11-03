@@ -25,7 +25,7 @@
 }
  
  bool Dfr0161::get_water_potential_hydrogen(std_msgs::Float32 &msg){
-   msg.data = _water_potential_hydrogenh;
+   msg.data = _water_potential_hydrogen;
    bool res = _send_water_potential_hydrogen;
    _send_water_potential_hydrogen = false;
    Serial2.println("HiBool");
@@ -90,7 +90,7 @@
    Serial2.println("HiData");
    int samples = 40;
   int voltage[samples];
-  const int sample_time_delta = 20; // millisecond
+  // const int sample_time_delta = 20; // millisecond
   // Acquire Samples
   for (int i=0; i<samples; i++){
    voltage[i] = analogRead(_ph_pin);
