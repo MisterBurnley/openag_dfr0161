@@ -3,7 +3,7 @@
     "class_name": "Dfr0161",
     "header_file": "openag_dfr0161.h",
     "outputs": {
-        "water_potential_hydrogen": {
+        "water_ph": {
             "type": "std_msgs/Float32"
         }
     },
