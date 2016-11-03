@@ -22,7 +22,7 @@ class Dfr0161: public Module {
   // From dfr0161_0300_sensor
   float averageArray(int* arr, int number);
   
-  const int ph_pin = 1;
+  // const int ph_pin = 1;
 
   // From dfr0161_0300_sensor
   float _ph_raw;
@@ -33,7 +33,7 @@ class Dfr0161: public Module {
   bool readSensor();
   
   // Private Variables
-  int _ph_pin =  ph_pin;
+  // int _ph_pin =  ph_pin;
   float _water_potential_hydrogen;
   bool _send_water_potential_hydrogen;
   uint32_t _time_of_last_reading;
