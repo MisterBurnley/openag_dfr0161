@@ -28,7 +28,58 @@
    _send_water_potential_hydrogen = false;
    return res;
 }
-
+ 
+ float Dfr0161::averageArray(int* arr, int number){
+   int i;
+   int max,min;
+   float avg;
+   long amount=0;
+   if (number<=0){ //if
+     return 0;
+   } //if(number<=0)
+  
+   if (number<5){ // less than 5, calculated directly statistics
+     for(i=0;i<number;i++){ //if
+       amount+=arr[i];
+     } //for (i=0;i<number;i++)
+      avg = amount/number;
+      return avg;
+   } //if (number<5)
+  
+   else {  //first_else
+    
+       if(arr[0]<arr[1]){// if(arr[0]<arr[1])
+         min = arr[0];
+         max = arr[1];
+       } // if(arr[0]<arr[1])
+    
+       else{ // second_else
+         min = arr[1];
+         max = arr[0];
+       } // second_else
+    
+       for (i=2; i<number; i++){//for (i=2; i<number; i++)
+         if (arr[i]<min){ //if (arr[i]<min)
+           amount+=min;
+           min=arr[i];
+         } //if (arr[i]<min)
+         else 
+         { // third_else
+           if (arr[i]>max){ // if (arr[i]>max)
+             amount+=max;
+             max=arr[i];
+           } //if (arr[i]>max)
+          
+           else
+           { //fourth_else
+             amount+=arr[i];
+           } //fourth_else
+         } //third_else
+       } //for (i=2; i<number; i++)
+       avg = (float) amount/(number-2);
+     } // first_else 
+  return avg;
+} //end of function
 //.......................................Private.......................................//
  
  float Dfr0161::getData(void){
