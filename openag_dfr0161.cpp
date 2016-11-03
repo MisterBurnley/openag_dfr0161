@@ -26,7 +26,6 @@
    msg.data = _water_potential_hydrogen;
    bool res = _send_water_potential_hydrogen;
    _send_water_potential_hydrogen = false;
-   Serial2.println("HiBool");
    return res;
 }
  
