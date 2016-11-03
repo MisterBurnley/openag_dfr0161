@@ -1,3 +1,2 @@
-# dfr0161_0300
-- DFRobot Analog Electrical Conductivity Sensor
+# dfr0161
 - DFRobot Analog pH Senso
