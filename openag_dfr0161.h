@@ -10,7 +10,6 @@
 #include <OneWire.h>
 #include <openag_module.h>
 #include <std_msgs/Float32.h>
-#define ph_pin 1
 
 class Dfr0161: public Module {
   public:
@@ -23,6 +22,8 @@ class Dfr0161: public Module {
   // From dfr0161_0300_sensor
   float averageArray(int* arr, int number);
   
+  const int ph_pin = 1;
+
   // From dfr0161_0300_sensor
   float _ph_raw;
   float _ph_filtered;
