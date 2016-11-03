@@ -2,7 +2,7 @@
 #include "openag_dfr0161.h"
 
  Dfr0161::Dfr0161(int pin){
-   _pin = pin;
+   _ph_pin = pin;
    status_level = OK;
    status_msg = "";
 }
@@ -11,8 +11,8 @@
    pinMode(_ph_pin, OUTPUT);
    digitalWrite(_ph_pin, LOW);
    _time_of_last_reading = 0;
-   ph_calibration_coefficient_ = 3.5:
-   ph_calibration_offset_ = -0.1;
+   _ph_calibration_coefficient = 3.5;
+   _ph_calibration_offset = -0.1;
  }
  
  void Dfr0161::update(){
@@ -22,7 +22,7 @@
    }
 }
  
- bool Dfr0161::get_water_potential_hygrogen(std_msg::Float32 &msg){
+ bool Dfr0161::get_water_potential_hygrogen(std_msgs::Float32 &msg){
    msg.data = _water_potential_hydrogen;
    bool res = _send_water_potential_hydrogen;
    _send_water_potential_hydrogen = false;
@@ -31,13 +31,13 @@
 
 //.......................................Private.......................................//
  
- void Dfr0161::getData(void){
+ float Dfr0161::getData(void){
    int samples = 40;
   int voltage[samples];
   const int sample_time_delta = 20; // millisecond
   // Acquire Samples
   for (int i=0; i<samples; i++){
-   voltage[i] = analogRad(_ph_pin);
+   voltage[i] = analogRead(_ph_pin);
   }
   
   // Remove Min & Max Samples, average, Convert to Voltage
