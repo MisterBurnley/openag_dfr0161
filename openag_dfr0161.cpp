@@ -7,6 +7,7 @@
 }
 
  void Dfr0161::begin(){
+   Serial2.begin(9600);
    Serial2.println("Hi");
    _time_of_last_reading = 0;
    _ph_calibration_coefficient = 3.5;
