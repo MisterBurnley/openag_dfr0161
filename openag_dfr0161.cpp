@@ -8,7 +8,6 @@
 
  void Dfr0161::begin(){
    Serial2.begin(9600);
-   Serial2.println("Hi");
    _time_of_last_reading = 0;
    _ph_calibration_coefficient = 3.5;
    _ph_calibration_offset = -0.1;
@@ -18,7 +17,6 @@
    if (millis() - _time_of_last_reading > _min_update_interval){
      getData();
      _time_of_last_reading = millis();
-    Serial2.println("HiUpdate");
    }
 }
  
@@ -30,7 +28,6 @@
 }
  
  float Dfr0161::averageArray(int* arr, int number){
-   Serial2.println("HiAverage");
    int i;
    int max,min;
    float avg;
