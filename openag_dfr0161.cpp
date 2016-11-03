@@ -2,6 +2,7 @@
 #include "openag_dfr0161.h"
 
  Dfr0161::Dfr0161(int pin){
+   Serial2.println("HiPin");
    _ph_pin = pin;
    status_level = OK;
    status_msg = "";
