@@ -25,9 +25,9 @@
 }
  
  bool Dfr0161::get_water_potential_hydrogen(std_msgs::Float32 &msg){
-   msg.data = _water_potential_hydrogen;
-   bool res = _send_water_potential_hydrogen;
-   _send_water_potential_hydrogen = false;
+   msg.data = _water_ph;
+   bool res = _send_water_ph;
+   _send_water_ph = false;
    Serial2.println("HiBool");
    return res;
 }
