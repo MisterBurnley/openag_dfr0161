@@ -27,7 +27,7 @@ class Dfr0161: public Module {
   float _ph_filtered;
   
   private:
-  void getData();
+  float getData();
   bool readSensor();
   
   // Private Variables
@@ -40,7 +40,7 @@ class Dfr0161: public Module {
   // From dfr0161_0300_sensor
   String _ph_instruction_code;
   int _ph_instruction_id;
-  float _ph_calibratoin_coefficent;
+  float _ph_calibratoin_coefficient;
   float _ph_calibration_offset;
   
   
