@@ -10,8 +10,6 @@
 
  void Dfr0161::begin(){
    Serial2.println("Hi");
-   pinMode(_ph_pin, OUTPUT);
-   digitalWrite(_ph_pin, LOW);
    _time_of_last_reading = 0;
    _ph_calibration_coefficient = 3.5;
    _ph_calibration_offset = -0.1;
