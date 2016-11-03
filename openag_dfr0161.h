@@ -33,7 +33,7 @@ class Dfr0161: public Module {
   bool readSensor();
   
   // Private Variables
-  int _ph_pin// =  ph_pin;
+  int _ph_pin;// =  ph_pin;
   float _water_potential_hydrogen;
   bool _send_water_potential_hydrogen;
   uint32_t _time_of_last_reading;
