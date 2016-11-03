@@ -95,5 +95,6 @@
   double volts = averageArray(voltage, samples) * 5.0/1024;
   
   // Conver Average Voltage to pH
+  Serial2.println(_ph_calibration_coefficient*volts + _ph_calibration_offset);
   return _ph_calibration_coefficient*volts + _ph_calibration_offset;
 }
