@@ -25,8 +25,8 @@ class Dfr0161: public Module {
   // const int ph_pin = 1;
 
   // From dfr0161_0300_sensor
-  float _ph_raw;
-  float _ph_filtered;
+  //float _ph_raw;
+  //float _ph_filtered;
   
   private:
   float getData();
