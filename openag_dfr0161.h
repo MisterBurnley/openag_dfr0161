@@ -40,8 +40,8 @@ class Dfr0161: public Module {
   const uint32_t _min_update_interval = 2000;
   
   // From dfr0161_0300_sensor
-  String _ph_instruction_code;
-  int _ph_instruction_id;
+  //String _ph_instruction_code;
+  //int _ph_instruction_id;
   float _ph_calibration_coefficient;
   float _ph_calibration_offset;
   
