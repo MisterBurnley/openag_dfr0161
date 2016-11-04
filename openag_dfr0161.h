@@ -14,7 +14,7 @@
 class Dfr0161: public Module {
   public:
   // Punlic Functions
-  Dfr0161(int _ph_pin);
+  Dfr0161(int ph_pin);
   void begin();
   void update();
   bool get_water_potential_hydrogen(std_msgs::Float32 &msg);
@@ -37,7 +37,7 @@ class Dfr0161: public Module {
   float _water_potential_hydrogen;
   bool _send_water_potential_hydrogen;
   uint32_t _time_of_last_reading;
-  const uint32_t _min_update_interval = 1800;
+  const uint32_t _min_update_interval = 2000;
   
   // From dfr0161_0300_sensor
   String _ph_instruction_code;
