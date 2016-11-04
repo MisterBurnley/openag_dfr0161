@@ -13,7 +13,7 @@
 
 class Dfr0161: public Module {
   public:
-  // Private Functions
+  // Punlic Functions
   Dfr0161(int _ph_pin);
   void begin();
   void update();
