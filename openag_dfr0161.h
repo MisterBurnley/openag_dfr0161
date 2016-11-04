@@ -30,7 +30,7 @@ class Dfr0161: public Module {
   
   private:
   float getData();
-  bool readSensor();
+  //bool readSensor();
   
   // Private Variables
   int _ph_pin;// =  ph_pin;
