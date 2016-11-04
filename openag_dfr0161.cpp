@@ -97,4 +97,6 @@
   // Conver Average Voltage to pH
   Serial2.println(_ph_calibration_coefficient*volts + _ph_calibration_offset);
   return _ph_calibration_coefficient*volts + _ph_calibration_offset;
+  //ph_raw = _ph_calibration_coefficient*volts + _ph_calibration_offset;
+  //ph_filtered = (float)round(ph_filter_->process(ph_raw)*10)/10;
 }
