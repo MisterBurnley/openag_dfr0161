@@ -97,7 +97,7 @@
    // Conver Average Voltage to pH
    _send_water_potential_hydrogen = true;
    _water_potential_hydrogen = _ph_calibration_coefficient*volts + _ph_calibration_offset;
-   Serial2.println(_water_potential_hydrogen);
+   //Serial2.println(_water_potential_hydrogen);
    return _water_potential_hydrogen;
    //ph_raw = _ph_calibration_coefficient*volts + _ph_calibration_offset;
    //ph_filtered = (float)round(ph_filter_->process(ph_raw)*10)/10;
