@@ -84,20 +84,20 @@
  float Dfr0161::getData(void){
    Serial2.println("HiData");
    int samples = 40;
-  int voltage[samples];
-  // const int sample_time_delta = 20; // millisecond
-  // Acquire Samples
-  for (int i=0; i<samples; i++){
-   voltage[i] = analogRead(_ph_pin);
-  }
-  
-  // Remove Min & Max Samples, average, Convert to Voltage
-  double volts = averageArray(voltage, samples) * 5.0/1024;
-  
-  // Conver Average Voltage to pH
-  _water_potential_hydrogen = _ph_calibration_coefficient*volts + _ph_calibration_offset;
-  Serial2.println(_water_potential_hydrogen);
-  return _water_potential_hydrogen;
-  //ph_raw = _ph_calibration_coefficient*volts + _ph_calibration_offset;
-  //ph_filtered = (float)round(ph_filter_->process(ph_raw)*10)/10;
+   int voltage[samples];
+   // const int sample_time_delta = 20; // millisecond
+   // Acquire Samples
+   for (int i=0; i<samples; i++){
+     voltage[i] = analogRead(_ph_pin);
+   }
+   
+   // Remove Min & Max Samples, average, Convert to Voltage
+   float volts = averageArray(voltage, samples) * 5.0/1024;
+   
+   // Conver Average Voltage to pH
+   _water_potential_hydrogen = _ph_calibration_coefficient*volts + _ph_calibration_offset;
+   Serial2.println(_water_potential_hydrogen);
+   return _water_potential_hydrogen;
+   //ph_raw = _ph_calibration_coefficient*volts + _ph_calibration_offset;
+   //ph_filtered = (float)round(ph_filter_->process(ph_raw)*10)/10;
 }
