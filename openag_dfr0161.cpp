@@ -8,7 +8,6 @@
 }
 
  void Dfr0161::begin(){
-   //Serial2.begin(9600);
    _time_of_last_reading = 0;
    _ph_calibration_coefficient = 3.5;
    _ph_calibration_offset = -0.1;
@@ -82,7 +81,6 @@
 //.......................................Private.......................................//
  
  float Dfr0161::getData(void){
-   Serial2.println("HiData");
    int samples = 40;
    int voltage[samples];
    // const int sample_time_delta = 20; // millisecond
