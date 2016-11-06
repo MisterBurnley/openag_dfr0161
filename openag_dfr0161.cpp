@@ -95,7 +95,7 @@
   double volts = averageArray(voltage, samples) * 5.0/1024;
   
   // Conver Average Voltage to pH
-  _water_potential_hydrogen = _ph_calibration_coefficient*volts + _ph_calibration_offset
+  _water_potential_hydrogen = _ph_calibration_coefficient*volts + _ph_calibration_offset;
   Serial2.println(_water_potential_hydrogen);
   return _water_potential_hydrogen;
   //ph_raw = _ph_calibration_coefficient*volts + _ph_calibration_offset;
