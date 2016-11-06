@@ -95,6 +95,7 @@
    float volts = averageArray(voltage, samples) * 5.0/1024;
    
    // Conver Average Voltage to pH
+   _send_water_potential_hydrogen = true;
    _water_potential_hydrogen = _ph_calibration_coefficient*volts + _ph_calibration_offset;
    Serial2.println(_water_potential_hydrogen);
    return _water_potential_hydrogen;
