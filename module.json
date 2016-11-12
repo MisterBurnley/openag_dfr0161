@@ -2,6 +2,12 @@
     "description": "Water Potential Hydrogen Sensor",
     "class_name": "Dfr0161",
     "header_file": "openag_dfr0161.h",
+    "arguments": [
+        {
+            "name": "pin",
+            "type": "int"
+        }
+        ],
     "outputs": {
         "water_potential_hydrogen": {
             "type": "std_msgs/Float32"
