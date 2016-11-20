@@ -4,7 +4,7 @@
     "description": "Water Potential Hydrogen Sensor",
     "repository": {
         "type": "git",
-        "url": "https://github.com/KhalladB/openag_dfr0161.git"
+        "url": "https://github.com/MisterBurnley/openag_dfr0161.git"
     },
     "frameworks": "arduino",
     "platforms": "*",
